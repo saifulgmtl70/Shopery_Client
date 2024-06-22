@@ -26,12 +26,6 @@ const Shop = () => {
     // State for the countdown timer
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-    // State for the filter and sort dropdowns
-    const [category, setCategory] = useState("");
-    const [price, setPrice] = useState("");
-    const [rating, setRating] = useState("");
-    const [sort, setSort] = useState("latest");
-    const [show, setShow] = useState(16);
 
     // Update the countdown timer every second
     useEffect(() => {
@@ -93,44 +87,7 @@ const Shop = () => {
                 </div>
             </div>
 
-            <div className="px-5 lg:px-12 py-10">
-                <div className="flex flex-col lg:flex-row justify-between mb-5">
-                    <div className="flex gap-4">
-                        <select className="select focus:border-0" value={category} onChange={(e) => setCategory(e.target.value)}>
-                            <option value="">Select Category</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="home">Home</option>
-                        </select>
-                        <select className="select focus:border-0" value={price} onChange={(e) => setPrice(e.target.value)}>
-                            <option value="">Select Price</option>
-                            <option value="low">Low to High</option>
-                            <option value="high">High to Low</option>
-                        </select>
-                        <select className="select focus:border-0" value={rating} onChange={(e) => setRating(e.target.value)}>
-                            <option value="">Select Rating</option>
-                            <option value="1">1 Star</option>
-                            <option value="2">2 Stars</option>
-                            <option value="3">3 Stars</option>
-                            <option value="4">4 Stars</option>
-                            <option value="5">5 Stars</option>
-                        </select>
-                    </div>
-                    <div className="flex gap-4 mt-4 lg:mt-0">
-                        <select className="select focus:border-0" value={sort} onChange={(e) => setSort(e.target.value)}>
-                            <option value="latest">Sort by: Latest</option>
-                            <option value="popular">Sort by: Popular</option>
-                            <option value="rating">Sort by: Rating</option>
-                        </select>
-                        <select className="select focus:border-0" value={show} onChange={(e) => setShow(e.target.value)}>
-                            <option value="16">Show: 16</option>
-                            <option value="32">Show: 32</option>
-                            <option value="64">Show: 64</option>
-                        </select>
-                    </div>
-                </div>
-                {/* Product listing will go here */}
-            </div>
+            
 
             <Products/>
         </section>

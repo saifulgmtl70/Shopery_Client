@@ -1,0 +1,35 @@
+.filters {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.filters h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.filters h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.filters select,
+.filters input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.filters .price-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-values span {
+    font-size: 14px;
+}
