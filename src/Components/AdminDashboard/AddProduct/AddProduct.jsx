@@ -94,8 +94,8 @@ const AddProduct = () => {
 
                             <select defaultValue="default" name="category" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" >
                                 <option disabled value="default" >Select a Category</option>
-                                <option value="salad">Fish</option>
-                                <option value="pizza">Meat</option>
+                                <option value="Fish">Fish</option>
+                                <option value="Meat">Meat</option>
                                 <option value="Vegetables">Vegetables</option>
                                 <option value="Fruits">Fruits</option>
                                 <option value="Oil">Oil</option>
@@ -119,7 +119,7 @@ const AddProduct = () => {
 
                         <div className="mb-8">
                             <p className="text-[17px] text-[#3e3d3d] font-[600] mb-2">Discount*</p>
-                            <input type="text" name="discount" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Discount" required/>
+                            <input type="text" name="discount" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Discount" />
                         </div>
 
                     </div>

@@ -118,7 +118,7 @@ const Product = ({product, isModalOpen, openModal, closeModal}) => {
         <div className="h-auto p-4 border rounded-[3px] product_Card relative">
             <ToastContainer/>
             <div>
-                <img src={images[0]} alt={name} className=" mx-auto" />
+                <img src={images[0]} alt={name} className="w-auto lg:w-[260px] h-auto lg:h-[200px] mx-auto" />
             </div>
             <div className="flex items-center justify-between">
                 <div>
