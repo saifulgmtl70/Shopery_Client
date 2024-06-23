@@ -19,6 +19,14 @@ import Userdashboard from "../UserDashboard/Userdashboard";
 import Userhome from "../UserDashboard/Userhome/Userhome";
 import OrderHistory from "../UserDashboard/OrderHistory/OrderHistory";
 import Settings from "../UserDashboard/Settings/Settings";
+import AdminDashboard from "../AdminDashboard/AdminDashboard";
+import AdminHome from "../AdminDashboard/AdminHome/AdminHome";
+import AllUsers from "../AdminDashboard/AllUsers/AllUsers";
+import AddProduct from "../AdminDashboard/AddProduct/AddProduct";
+import ManageProduct from "../AdminDashboard/ManageProduct/ManageProduct";
+import AddCategory from "../AdminDashboard/AddCategory/AddCategory";
+import ManageCategory from "../AdminDashboard/ManageCategory/ManageCategory";
+import AdminRoute from "./‎AdminRoute";
 
 
 
@@ -127,7 +135,46 @@ export const router = createBrowserRouter([
           element: <Settings/>
         }
       ]
+    },
+
+    {
+      path: 'admindashboard',
+      element: <AdminRoute> <AdminDashboard/> </AdminRoute>,
+      children:[
+        {
+          path: 'adminhome',
+          element: <AdminHome/>
+        },
+
+        {
+          path: 'allusers',
+          element: <AllUsers/>
+        },
+
+        {
+          path: 'addproduct',
+          element: <AddProduct/>
+        },
+
+        {
+          path: 'manageproduct',
+          element: <ManageProduct/>
+        },
+
+        {
+          path: 'addcategory',
+          element: <AddCategory/>
+        },
+
+        {
+          path: 'managecategory',
+          element: <ManageCategory/>
+        },
+
+      ]
     }
+
+
 
 
 

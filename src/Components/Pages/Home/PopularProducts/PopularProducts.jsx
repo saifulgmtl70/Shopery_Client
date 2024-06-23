@@ -31,7 +31,7 @@ const PopularProducts = () => {
                 </Link>
             </div>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
-                {popularProducts.map((product) => (
+                {popularProducts.slice(0, 10).map((product) => (
                     <PopularProduct
                         key={product._id}
                         popularProduct={product}

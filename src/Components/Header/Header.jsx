@@ -13,6 +13,7 @@ import './Header.css';
 import useCart from '../Hooks/useCart';
 import useAxiosPublic from '../Hooks/useAxiosPublic';
 import useWishlist from '../Hooks/useWishlist';
+import useAdmin from '../Hooks/useAdmin';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +24,9 @@ function Header() {
   const [wishlist, refetch] = useWishlist()
   const { user, logOut } = useAuth();
   const navigate = useNavigate();
+
+  const [isAdmin] = useAdmin();
+  // console.log(isAdmin);
 
     const handleMenuItemClick = () => {
       setMenuOpen(false);
@@ -83,7 +87,7 @@ function Header() {
                 autoClose: 3000,
                 onClose: () =>  navigate('/')
               });
-              // refetch();
+              refetch();
               
               
           }
@@ -151,7 +155,18 @@ function Header() {
                         <p className="font-bold text-[18px]">{user.displayName}</p>
                         <p className="text-[15px]  text-gray-600">{user.email}</p>
                       </div>
-                      <Link to="userdashboard/userhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Your Profile</button></Link>
+                      {/* 
+                       */}
+
+                      {
+                        isAdmin ? <Link to="admindashboard/adminhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Admin Dashboard</button></Link> 
+
+                        :
+
+                        <Link to="userdashboard/userhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Your Profile</button></Link>
+
+                      }
+
                     </div>
                     <div className="border-t">
                       <button onClick={handleLogout} className="w-full text-left px-4 py-2 bg-gray-100">Logout</button>
@@ -183,7 +198,14 @@ function Header() {
                           <p className="font-bold text-[18px]">{user.displayName}</p>
                           <p className="text-[15px]  text-gray-600">{user.email}</p>
                       </div>
-                      <Link to="userdashboard/userhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Your Profile</button></Link>
+                      {
+                        isAdmin ? <Link to="admindashboard/adminhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Admin Dashboard</button></Link> 
+                        
+                        :
+
+                        <Link to="userdashboard/userhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Your Profile</button></Link>
+
+                      }
                     </div>
                     <div className="border-t">
                       <button onClick={handleLogout} className="w-full text-left px-4 py-2 bg-gray-100">Logout</button>

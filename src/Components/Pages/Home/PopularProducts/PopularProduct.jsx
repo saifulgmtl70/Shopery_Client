@@ -16,7 +16,7 @@ import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 import useWishlist from '../../../Hooks/useWishlist';
 
 const PopularProduct = ({ popularProduct, isModalOpen, openModal, closeModal }) => {
-    const { _id, name, category, price, images, sale, rating, availability } = popularProduct;
+    const { _id, name, category, price, images, sale, rating, availability, description } = popularProduct;
 
     const { user } = useAuth();
 
@@ -192,7 +192,7 @@ const PopularProduct = ({ popularProduct, isModalOpen, openModal, closeModal }) 
                                             </ul>
                                         </div>
 
-                                        <p className="">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. </p>
+                                        <p className="">{description} </p>
 
                                         <div className="flex items-center gap-2">
                                         

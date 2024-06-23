@@ -6,23 +6,34 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from '../../Hooks/useAuth';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const Sociallogin = () => {
 
     const {signInWithGoogle} = useAuth();
+    const axiosPublic = useAxiosPublic();
     const navigate =  useNavigate();
 
     const handleGoogleLogin = () =>{
         signInWithGoogle()
-        .then((res) =>{
-            console.log(res.user);
-            toast.success("Successfully Logged in", {
-                position: "top-center",
-                autoClose: 1000, // এক সেকেন্ডের মধ্যে বন্ধ হবে
-                 // টোস্ট বন্ধ হওয়ার পরে নেভিগেট করুন
-                onClose: () => navigate('/')
-            });
+
+        .then(result =>{
+            console.log(result.user);
+            const userInfo = {
+                email: result.user?.email,
+                name: result.user?.displayName
+            }
+            axiosPublic.post('/users', userInfo)
+            .then(res =>{
+                console.log(res.data);
+                toast.success("Successfully Logged in", {
+                    position: "top-center",
+                    autoClose: 1000, // এক সেকেন্ডের মধ্যে বন্ধ হবে
+                    onClose: () => navigate('/')
+                });
+            })
         })
+
     }
 
 

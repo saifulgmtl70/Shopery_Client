@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Sociallogin from '../Sociallogin/Sociallogin';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
@@ -19,6 +19,9 @@ const Login = () => {
     const { signIn } = useAuth();
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    console.log('state in the location login page', location.state)
 
 
     const handleLogin = (e) => {
@@ -36,7 +39,7 @@ const Login = () => {
                 toast.success("Logged in Successfully", {
                     position: "top-center",
                     autoClose: 1000, // এক সেকেন্ডের মধ্যে বন্ধ হবে
-                    onClose: () => navigate('/') // টোস্ট বন্ধ হওয়ার পরে নেভিগেট করুন
+                    onClose: () =>  navigate(from, { replace: true })  // টোস্ট বন্ধ হওয়ার পরে নেভিগেট করুন
                 }); // টাইমআউট সেট করে অনুপ্রেরণা দেখানোর পরে নেভিগেট করুন
             })
             .catch(() => {

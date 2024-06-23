@@ -20,7 +20,7 @@ import useWishlist from '../../../Hooks/useWishlist';
 
 const Product = ({product, isModalOpen, openModal, closeModal}) => {
 
-    const { _id, name, category, price, images,  rating, availability } = product;
+    const { _id, name, category, price, images,  rating, availability, description } = product;
 
 
     const { user } = useAuth();
@@ -203,7 +203,7 @@ const Product = ({product, isModalOpen, openModal, closeModal}) => {
                                             </ul>
                                         </div>
 
-                                        <p className="">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. </p>
+                                        <p className="">{description} </p>
 
                                         <div className="flex items-center gap-2">
                                         
