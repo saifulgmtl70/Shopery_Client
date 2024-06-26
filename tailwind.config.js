@@ -8,14 +8,7 @@ export default ({
  
   theme: {
     extend: {
-      colors: {
-        headerBg: '#F5FAF7',
-        primary: '#57C78C',
-        secondary: '#4A4A4A',
-      },
-      fontFamily: {
-        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
-      },
+      
     },
   },
   plugins: [

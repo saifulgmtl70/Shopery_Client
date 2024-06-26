@@ -10,7 +10,7 @@ const Comments = ({ blogId }) => {
 
     const fetchComments = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/blogs/${blogId}/comments`);
+            const response = await fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs/${blogId}/comments`);
             if (response.ok) {
                 const data = await response.json();
                 setComments(data);
@@ -28,7 +28,7 @@ const Comments = ({ blogId }) => {
         e.preventDefault();
     
         try {
-            const response = await fetch(`http://localhost:5000/blogs/${blogId}/comments`, {
+            const response = await fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs/${blogId}/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

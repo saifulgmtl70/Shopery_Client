@@ -12,6 +12,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import useCart from "../../../Hooks/useCart";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 const SeeProduct = () => {
     const seeProduct = useLoaderData();
@@ -26,7 +27,7 @@ const SeeProduct = () => {
 
     useEffect(() => {
         // Fetch related products from the server
-        fetch('http://localhost:5000/products')
+        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 // Filter out the current product
@@ -145,6 +146,10 @@ const SeeProduct = () => {
     
     return (
         <section className="nunito_sans">
+            <Helmet>
+                <title>Shopery | Product Details </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <ToastContainer/>
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">
@@ -196,7 +201,7 @@ const SeeProduct = () => {
                             <hr />
 
                             <div className="flex items-center justify-between mb-3">
-                                <h3 className="text-[18px] font-bold">Brand</h3>
+                                <p><strong>Category: </strong>{product.category}</p>
                                 <ul className="flex items-center">
                                     <li className='text-[17px] text-[#222] rounded-full transition-all delay-200 p-3 hover:bg-green-700 hover:text-[#fff] cursor-pointer'>
                                         <FaFacebookF />
@@ -213,11 +218,11 @@ const SeeProduct = () => {
                                 </ul>
                             </div>
 
-                            <p className="">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar.</p>
+                            <p className="">{product.description}</p>
 
                             <div className="flex items-center gap-2">
                                 <div>
-                                    <div className="flex items-center gap-1 border px-3">
+                                    <div className="flex items-center gap-1 border rounded-[30px] px-3 py-3">
                                         <button onClick={() => handleQuantityChange(-1)} type="button" className="text-gray-600 transition hover:opacity-75">
                                             -
                                         </button>
@@ -242,7 +247,7 @@ const SeeProduct = () => {
                                     <CiHeart />
                                 </div>
                             </div>
-                            <p><strong>Category: </strong>{product.category}</p>
+                            
                         </div>
                     </div>
                 </div>
@@ -257,7 +262,7 @@ const SeeProduct = () => {
                     {relatedProducts.slice(0, 4).map((relatedProduct) => (
                         <div key={relatedProduct._id} className="h-auto p-4 border rounded-[3px] product_Card relative">
                             <div>
-                                <img src={relatedProduct.images[0]} alt={relatedProduct.name} className=" mx-auto" />
+                                <img src={relatedProduct.images[0]} alt={relatedProduct.name} className="w-auto lg:w-[260px] h-auto lg:h-[160px]  mx-auto" />
                             </div>
                             <div className="flex items-center justify-between">
                                 <div>

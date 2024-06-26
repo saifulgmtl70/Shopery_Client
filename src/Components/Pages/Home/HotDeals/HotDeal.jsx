@@ -11,7 +11,7 @@ const HotDeal = () => {
     const [hotDeals, setHotDeals] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/hotdeals')
+        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/hotdeals')
             .then(res => res.json())
             .then(data => setHotDeals(data));
     }, []);
@@ -28,7 +28,7 @@ const HotDeal = () => {
             </div>
 
             <div className="hot-deals-container grid grid-cols-1 lg:grid-cols-4 gap-[20px]">
-                {hotDeals.map((deal, index) => (
+                {hotDeals.map((deal) => (
                     <div className="hot-deal-card" key={deal.id}>
                         {deal.sale && <div className="hot-deal-sale">{deal.sale}</div>}
                         <img src={deal.image} alt={deal.name} />

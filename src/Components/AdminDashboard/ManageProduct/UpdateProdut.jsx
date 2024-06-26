@@ -1,14 +1,32 @@
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { Helmet } from 'react-helmet-async';
 
+const UpdateProdut = () => {
 
-const AddProduct = () => {
+    const { id } = useParams();  // Use useParams to get the blogId from the URL
+    const products = useLoaderData();  // Get the list of blogs from the loader
+
+    const navigate = useNavigate();
+
+    const product = Array.isArray(products)
+        ? products.find((product) => product._id === id)
+        : null;
+
+    if (!product) {
+        return (
+            <section className="nunito_sans">
+                <div className="px-14 py-10">
+                    <h1 className="text-3xl font-bold">This product is not found</h1>
+                    <p className="mt-4">We couldn't find the product you're looking for.</p>
+                </div>
+            </section>
+        );
+    }
 
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
@@ -24,7 +42,9 @@ const AddProduct = () => {
         return response.data.data.url; // Return the URL of the uploaded image
     };
 
-    const handleAddProduct = async (e) => {
+
+
+    const handleUpdateProduct = async (e) => {
         e.preventDefault();
 
         const form = e.target;
@@ -46,20 +66,21 @@ const AddProduct = () => {
             console.log(productItem);
 
             // Send productItem to your server
-            const response = await axiosSecure.post('/products', productItem);
+            const response = await axiosSecure.patch(`/products/${product._id}`, productItem);
             console.log("Server Response:", response.data);
 
             // Show success toast
-            // toast.success("Product added successfully!");
-            toast.success("Product added successfully!", {
-                position: "top-center",
-                autoClose: 1000, // এক সেকেন্ডের মধ্যে বন্ধ হবে
 
-            });
+            toast.success(`${product.name} updated successfully!`, {
+                position: "top-center",
+                autoClose: 1000,
+                onclose: () => navigate('/admindashboard/manageproduct')
+            })
+
         } catch (error) {
-            console.error("Error adding product:", error);
+            console.error("Error updating product:", error);
             // toast.error("Failed to add product. Please try again.");
-            toast.error("Failed to add product. Please try again.", {
+            toast.error("Failed to update product. Please try again.", {
                 position: "top-center",
                 autoClose: 1000, // এক সেকেন্ডের মধ্যে বন্ধ হবে
 
@@ -70,35 +91,44 @@ const AddProduct = () => {
         form.reset();
 
     };
- 
 
 
+
+
+
+
+
+
+    
 
     return (
-        <section className="px-4 lg:px-12 my-20 py-12">
+        <section className="px-12 my-20 py-12">
             <Helmet>
-                <title>Shopery | Add Product </title>
+                <title>Shopery | Update Product </title>
                 {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
             </Helmet>
             <ToastContainer/>
             <div className="text-center font_Inter mb-10">
-                <h2 className="text-[27px] leading-relaxed uppercase text-[#333] font-bold"> ADD A PRODUCT</h2>
+                <h2 className="text-[27px] leading-relaxed uppercase text-[#333] font-bold"> update the <span className="text-[#00B207] font-bold">{product.name}</span> </h2>
+
             </div>
 
 
+
+            
             <div className="w-full bg-[#fff] h-auto px-10 mb-12 py-3 rounded-[1px]">
                 
-                <form onSubmit={handleAddProduct} className=" w-full my-6">
+                <form onSubmit={handleUpdateProduct} className=" w-full my-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
                         <div className="mb-8">
                             <p className="text-[17px] text-[#3e3d3d] font-[600] mb-2">Product name*</p>
-                            <input type="text" name="name" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Product Name" required/>
+                            <input type="text" defaultValue={product.name} name="name" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Product Name" required/>
                         </div>
 
                         <div className="mb-8">
                             <p className="text-[17px] text-[#454545] font-[600] mb-2">Category*</p>
 
-                            <select defaultValue="default" name="category" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" >
+                            <select defaultValue={product.category} name="category" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" >
                                 <option disabled value="default" >Select a Category</option>
                                 <option value="Fish">Fish</option>
                                 <option value="Meat">Meat</option>
@@ -120,12 +150,12 @@ const AddProduct = () => {
                         
                         <div className="mb-8">
                             <p className="text-[17px] text-[#454545] font-[600] mb-2">Price*</p>
-                            <input type="number" name="price" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]"  placeholder="Price" required/>
+                            <input type="number" defaultValue={product.price}  name="price" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]"  placeholder="Price" required/>
                         </div>
 
                         <div className="mb-8">
                             <p className="text-[17px] text-[#3e3d3d] font-[600] mb-2">Discount*</p>
-                            <input type="text" name="discount" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Discount" />
+                            <input type="text" defaultValue={product.sale}  name="discount" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Discount" />
                         </div>
 
                     </div>
@@ -135,13 +165,13 @@ const AddProduct = () => {
 
                         <div className="mb-8">
                             <p className="text-[17px] text-[#3e3d3d] font-[600] mb-2">Ratings*</p>
-                            <input type="text" name="rating" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Product Ratings" required/>
+                            <input type="text" defaultValue={product.rating} name="rating" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" placeholder="Product Ratings" required/>
                         </div>
 
                         <div className="mb-8">
                             <p className="text-[17px] text-[#454545] font-[600] mb-2">Availability*</p>
 
-                            <select defaultValue="default" name="availability" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" >
+                            <select defaultValue={product.availability} name="availability" className="px-4 py-4 w-full mx-auto focus:outline-none border focus:border focus:border-[#02B308] rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d]" >
                                 <option disabled value="default" >Select a Category</option>
                                 <option value="In Stock">In Stock</option>
                                 <option value="Out of Stock">Out of Stock</option>
@@ -158,7 +188,7 @@ const AddProduct = () => {
                     <div className="mb-8">
                         <p className="text-[17px] text-[#454545] font-[600] mb-2">Product Description*</p>
 
-                        <textarea name="description"  className="px-4 py-6 w-full focus:outline-none border focus:border focus:border-[#02B308] h-48 mx-auto rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d] resize-none" placeholder="Product Descriptions" ></textarea>
+                        <textarea name="description" defaultValue={product.description}  className="px-4 py-6 w-full focus:outline-none border focus:border focus:border-[#02B308] h-48 mx-auto rounded-[3px] bg-[#F1F5F9] placeholder:text-[#3e3d3d] resize-none" placeholder="Product Descriptions" ></textarea>
                     </div>
 
 
@@ -212,8 +242,9 @@ const AddProduct = () => {
 
 
 
+
         </section>
     );
 };
 
-export default AddProduct;
+export default UpdateProdut;

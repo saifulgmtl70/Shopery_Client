@@ -4,11 +4,13 @@ import Newsletter from "../Shop/Products/Newsletter";
 import { useEffect, useState } from "react";
 import Blog from "./Blog";
 
+import { Helmet } from 'react-helmet-async';
+
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(error => console.error('Error fetching blogs:', error));
@@ -16,6 +18,10 @@ const Blogs = () => {
 
     return (
         <section className="nunito_sans">
+            <Helmet>
+                <title>Shopery | Blog </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">
                     <ul>

@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import Newsletter from '../../Pages/Shop/Products/Newsletter';
 
+import { Helmet } from 'react-helmet-async';
+
 const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -116,6 +118,10 @@ const Signup = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Shopery | Sign Up </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <div className="flex justify-center items-center h-screen bg-[#fff] nunito_sans">
                 <ToastContainer/>
 

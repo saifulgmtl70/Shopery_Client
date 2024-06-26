@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Settings = () => {
     const fileInputRef = useRef(null);
@@ -9,6 +10,10 @@ const Settings = () => {
 
     return (
         <div className="h-auto ">
+            <Helmet>
+                <title>Shopery | Settings </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <h2 className="text-xl font-semibold mb-6">Account Settings</h2>
             <form className="mb-6 border p-4 rounded-lg bg-white shadow-sm">
                 <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">

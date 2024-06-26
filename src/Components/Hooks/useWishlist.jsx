@@ -6,6 +6,7 @@ import useAxiosPublic from "./useAxiosPublic";
 const useWishlist = () => {
     const axiosPublic = useAxiosPublic();
     const { user } = useAuth();
+    
     const { refetch, data: wishlist = [] } = useQuery({
         queryKey: ['wishlist', user?.email],
         queryFn: async() => {

@@ -15,6 +15,8 @@ import { IoLeaf } from "react-icons/io5";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import { SiManageiq } from "react-icons/si";
 
+import { Helmet } from 'react-helmet-async';
+
 const AdminDashboard = () => {
 
     const { user, logOut } = useAuth();
@@ -54,6 +56,10 @@ const AdminDashboard = () => {
 
     return (
         <main className="nunito_sans">
+            <Helmet>
+                <title>Shopery | Admin Dashboard </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
           
             <ToastContainer/>
 

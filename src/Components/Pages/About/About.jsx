@@ -14,9 +14,15 @@ import OurTeam from "./OurTeam";
 import Testimonial from "../Home/Testimonial/Testimonial";
 import Sponsor from "../Home/Sponsor/Sponsor";
 
+import { Helmet } from 'react-helmet-async';
+
 const About = () => {
     return (
         <section className="nunito_sans">
+            <Helmet>
+                <title>Shopery | About Us </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">
                     <ul>
@@ -48,15 +54,15 @@ const About = () => {
                         <img src="https://i.ibb.co/wg9Byqj/about-1.png" alt="" />
                     </div>
 
-                    <div className="h-auto bg-[#fff] lg:bg-transparent m-4 p-4 w-full lg:w-6/12">
+                    <div className="h-auto bg-[#fff] lg:bg-transparent m-4  w-full lg:w-6/12">
                         <h2 className="text-[#111] font-bold text-[40px] lg:text-[60px] leading-[65px] mb-5">100% Trusted Organic Food Store</h2>
                         <p className="text-[#444] font-[600] leading-normal tracking-wide">Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros. Cras quis ultricies elit. Proin ac lectus arcu. Maecenas aliquet vel tellus at accumsan. Donec a eros non massa vulputate ornare. Vivamus ornare commodo ante, at commodo felis congue vitae.
                         </p>
 
-                        <div className="flex flex-col lg:flex-row items-center gap-4 my-5">
+                        <div className="flex flex-col lg:flex-row items-center gap-4 ">
 
                             <ul className="space-y-5">
-                                <li className="flex gap-2 mb-3">
+                                <li className="flex items-center gap-2 mb-3">
                                     <div className="p-3 rounded-full bg-[#E5F7E6] text-[#00B207] ">
                                         <LuLeaf className=" text-[25px]" />
                                     </div>
@@ -66,8 +72,8 @@ const About = () => {
                                     </div>
                                 </li>
 
-                                <li className="flex gap-2 mb-3">
-                                    <div className="p-3 rounded-full bg-[#E5F7E6] text-[#00B207] ">
+                                <li className="flex items-center gap-2 mb-3">
+                                    <div className="p-2 rounded-full bg-[#E5F7E6] text-[#00B207] ">
                                         <BsStars className=" text-[25px]" />
                                     </div>
                                     <div>
@@ -76,8 +82,8 @@ const About = () => {
                                     </div>
                                 </li>
 
-                                <li className="flex gap-2 ">
-                                    <div className="p-3 rounded-full bg-[#E5F7E6] text-[#00B207] ">
+                                <li className="flex items-center gap-2 ">
+                                    <div className="p-2 rounded-full bg-[#E5F7E6] text-[#00B207] ">
                                         <LiaShippingFastSolid className=" text-[25px]" />
                                     </div>
                                     <div>
@@ -89,7 +95,7 @@ const About = () => {
                             </ul>
 
                             <ul className="space-y-5">
-                                <li className="flex gap-2 mb-3">
+                                <li className="flex items-center gap-2 mb-3">
                                     <div className="p-3 rounded-full bg-[#E5F7E6] text-[#00B207] ">
                                         <RiCustomerService2Line className=" text-[25px]" />
                                     </div>
@@ -99,7 +105,7 @@ const About = () => {
                                     </div>
                                 </li>
 
-                                <li className="flex gap-2 mb-3">
+                                <li className="flex items-center gap-2 mb-3">
                                     <div className="p-3 rounded-full bg-[#E5F7E6] text-[#00B207] ">
                                         <IoBagCheckOutline className=" text-[25px]" />
                                     </div>
@@ -109,7 +115,7 @@ const About = () => {
                                     </div>
                                 </li>
 
-                                <li className="flex gap-2 ">
+                                <li className="flex items-center gap-2 ">
                                     <div className="p-3 rounded-full bg-[#E5F7E6] text-[#00B207] ">
                                         <LiaShippingFastSolid className=" text-[30px]" />
                                     </div>
@@ -130,7 +136,7 @@ const About = () => {
             </div>
 
 
-            <div className="px-7 lg:px-14 py-10 mb-5">
+            <div className="px-7 lg:px-14 py-10 mb-5 bg-[#fff]">
                 <div className="flex flex-col lg:flex-row items-center justify-around gap-5 ">
                     
                     <div className="h-auto w-full lg:w-6/12">
@@ -171,7 +177,7 @@ const About = () => {
                     </div>
 
                     <div className="h-auto w-full lg:w-6/12">
-                        <img src="https://i.ibb.co/Rb2wbzX/mann.png" alt="" />
+                        <img src="https://i.ibb.co/Rb2wbzX/mann.png " className="" alt="" />
                     </div>
 
                 </div>

@@ -7,6 +7,8 @@ import useCart from "../../Hooks/useCart";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAuth from '../../Hooks/useAuth';
 
+import { Helmet } from 'react-helmet-async';
+
 const Checkout = () => {
     
     const location = useLocation();
@@ -62,7 +64,8 @@ const Checkout = () => {
                 image: item.image,
                 total: item.price * quantities[item._id]
             })),
-            totalPrice
+            totalPrice,
+            status: "pending"
         };
     
         console.log('Placing order with data:', orderData); // Debugging log
@@ -102,6 +105,10 @@ const Checkout = () => {
       
     return (
         <section className="nunito_sans">
+            <Helmet>
+                <title>Shopery | Checkout </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <ToastContainer />
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">
@@ -313,7 +320,7 @@ const Checkout = () => {
                             {/* <button type="submit" className="bg-[#00B207] text-white py-3 px-6 rounded-[6px] w-full mt-4">Place Order</button> */}
 
                             {
-                                cart.length === 0 ? <button disabled type="submit" className="bg-[#eee] text-[#00B207] py-3 px-6 rounded-[6px] w-full mt-4">Place Order</button>
+                                cart.length === 0 ? <button disabled type="submit" className="bg-[#eee] cursor-not-allowed text-[#00B207] py-3 px-6 rounded-[6px] w-full mt-4">Place Order</button>
                                 :
                                 <button type="submit" className="bg-[#00B207] text-white py-3 px-6 rounded-[6px] w-full mt-4">Place Order</button>
                             }

@@ -27,6 +27,7 @@ import ManageProduct from "../AdminDashboard/ManageProduct/ManageProduct";
 import AddCategory from "../AdminDashboard/AddCategory/AddCategory";
 import ManageCategory from "../AdminDashboard/ManageCategory/ManageCategory";
 import AdminRoute from "./‎AdminRoute";
+import UpdateProdut from "../AdminDashboard/ManageProduct/UpdateProdut";
 
 
 
@@ -55,13 +56,13 @@ export const router = createBrowserRouter([
         {
           path: '/product/:id',
           element: <SeeProduct/>,
-          loader: () => fetch(`http://localhost:5000/products`)
+          loader: () => fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/products`)
         },
 
         {
           path:'/seeblog/:id',
           element: <SeeBlog></SeeBlog>,
-          loader: () => fetch(`http://localhost:5000/blogs`) 
+          loader: () => fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs`) 
 
         },
 
@@ -159,6 +160,12 @@ export const router = createBrowserRouter([
         {
           path: 'manageproduct',
           element: <ManageProduct/>
+        },
+
+        {
+          path: 'updateProduct/:id',
+          element: <AdminRoute> <UpdateProdut/> </AdminRoute>,
+          loader: () => fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/products`) 
         },
 
         {

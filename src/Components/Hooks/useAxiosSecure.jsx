@@ -4,7 +4,7 @@ import useAuth from "./useAuth";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app'
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate();

@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app'
 });
 
 const useAxiosPublic = () => {

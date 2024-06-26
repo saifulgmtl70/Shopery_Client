@@ -14,12 +14,17 @@ import Testimonial from "./Testimonial/Testimonial";
 import Sponsor from "./Sponsor/Sponsor";
 import Follow from "./Follow/Follow";
 
+import { Helmet } from 'react-helmet-async';
 
 
 
 const Home = () => {
     return (
         <section>
+            <Helmet>
+                <title>Shopery | Home </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <Banner/>
 
             <div className="px-4 lg:px-6 py-10 nunito_sans">

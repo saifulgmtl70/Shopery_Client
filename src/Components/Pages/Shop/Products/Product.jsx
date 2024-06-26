@@ -118,7 +118,7 @@ const Product = ({product, isModalOpen, openModal, closeModal}) => {
         <div className="h-auto p-4 border rounded-[3px] product_Card relative">
             <ToastContainer/>
             <div>
-                <img src={images[0]} alt={name} className="w-auto lg:w-[260px] h-auto lg:h-[200px] mx-auto" />
+                <img src={images[0]} alt={name} className="w-auto lg:w-[260px] h-auto lg:h-[160px] mx-auto" />
             </div>
             <div className="flex items-center justify-between">
                 <div>
@@ -186,7 +186,7 @@ const Product = ({product, isModalOpen, openModal, closeModal}) => {
                                         <hr/>
 
                                         <div className="flex items-center justify-between mb-3">
-                                            <h3 className="text-[18px] font-bold">Brand</h3>
+                                            <p><strong>Category: </strong>{category}</p>
                                             <ul className="flex items-center">
                                                 <li className='text-[17px] text-[#222] rounded-full transition-all delay-200 p-3 hover:bg-green-700 hover:text-[#fff] cursor-pointer'>
                                                     <FaFacebookF />

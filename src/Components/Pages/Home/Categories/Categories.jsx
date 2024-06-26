@@ -11,7 +11,7 @@ const Categories = () => {
     const axiosPublic = 
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, []);

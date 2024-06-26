@@ -4,12 +4,19 @@ import Footer from "../Footer/Footer";
 import { HiOutlineHome } from "react-icons/hi";
 import Sidebar from "./Sidebar/Sidebar";
 
-import './dashboard.css'
+import './dashboard.css';
+
+
+import { Helmet } from 'react-helmet-async';
 
 
 const UserDashboard = () => {
     return (
         <main className="nunito_sans">
+            <Helmet>
+                <title>Shopery | User Dashboard </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <Header />
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">

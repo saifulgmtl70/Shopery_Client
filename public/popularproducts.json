@@ -1,8 +1,7 @@
 [
     {
-        
         "name": "Green Apple",
-        "description": "Fresh and crispy green apples.",
+        "description": "Fresh and crispy green apples. These green apples are not only deliciously tart and juicy but also packed with essential vitamins and minerals. They are perfect for snacking, baking, or adding to salads. Rich in dietary fiber, they help in digestion and are a great option for a healthy diet. Enjoy them as a refreshing snack or use them to add a crisp texture and tangy flavor to your favorite dishes.",
         "category": "Fruits",
         "price": 14.99,
         "images": [
@@ -17,9 +16,8 @@
     },
 
     {
-       
         "name": "Fresh Indian Malta",
-        "description": "Juicy and sweet Indian Malta oranges.",
+        "description": "Juicy and sweet Indian Malta oranges. These oranges are known for their rich flavor and vibrant color. Packed with Vitamin C and antioxidants, they are perfect for boosting your immune system and adding a refreshing zest to your diet. Enjoy them as a healthy snack, squeeze them for fresh juice, or use them in your favorite recipes. Their juicy and sweet taste makes them a favorite among citrus lovers.",
         "category": "Fruits",
         "price": 20.00,
         "images": [
@@ -34,9 +32,8 @@
     },
 
     {
-        
         "name": "Chinese Cabbage",
-        "description": "Fresh Chinese cabbage, perfect for salads.",
+        "description": "Fresh Chinese cabbage, perfect for salads. This leafy green is not only delicious but also packed with nutrients. It's a staple in Asian cuisine, known for its mild flavor and crunchy texture. Chinese cabbage is an excellent source of vitamins A and C, fiber, and antioxidants. Use it in salads, stir-fries, soups, or even as a healthy wrap. Its versatility and health benefits make it a great addition to any meal.",
         "category": "Vegetables",
         "price": 12.00,
         "images": [
@@ -51,9 +48,8 @@
     },
 
     {
-       
         "name": "Green Lettuce",
-        "description": "Crisp green lettuce for your salads.",
+        "description": "Crisp green lettuce for your salads. This lettuce is not only fresh and crunchy but also loaded with essential vitamins and minerals. Perfect for adding a refreshing bite to your salads, sandwiches, and wraps. It's a low-calorie, nutrient-dense food that helps in maintaining a healthy diet. Enjoy its crisp texture and mild flavor in a variety of dishes, or simply use it as a healthy base for your favorite salads.",
         "category": "Vegetables",
         "price": 9.00,
         "images": [
@@ -69,7 +65,7 @@
 
     {
         "name": "Eggplant",
-        "description": "Fresh eggplants, perfect for cooking.",
+        "description": "Fresh eggplants, perfect for cooking. These eggplants are firm, glossy, and perfect for a variety of dishes. Whether grilled, roasted, or used in stews and casseroles, eggplants add a rich, meaty texture to any meal. They are an excellent source of dietary fiber, vitamins, and antioxidants. Incorporate them into your diet to enjoy their numerous health benefits and unique flavor.",
         "category": "Vegetables",
         "price": 34.00,
         "images": [
@@ -84,9 +80,8 @@
     },
 
     {
-     
         "name": "Big Potatoes",
-        "description": "Large, starchy potatoes.",
+        "description": "Large, starchy potatoes. These potatoes are perfect for baking, mashing, or frying. Their starchy texture makes them ideal for creating fluffy mashed potatoes, crispy fries, and hearty baked potatoes. Packed with essential nutrients like potassium and vitamin C, they are a versatile and healthy addition to any meal. Enjoy their rich, earthy flavor in a variety of dishes, from soups and stews to salads and casseroles.",
         "category": "Vegetables",
         "price": 20.00,
         "images": [
@@ -101,9 +96,8 @@
     },
 
     {
-       
         "name": "Corn",
-        "description": "Sweet and fresh corn.",
+        "description": "Sweet and fresh corn. This corn is perfect for boiling, grilling, or adding to salads and soups. Enjoy its sweet, juicy kernels that burst with flavor in every bite. Corn is a great source of dietary fiber, vitamins, and minerals, making it a healthy addition to your meals. Use it to create delicious side dishes, salsas, or simply enjoy it on the cob with a bit of butter and salt.",
         "category": "Vegetables",
         "price": 20.00,
         "images": [
@@ -118,9 +112,8 @@
     },
 
     {
-    
         "name": "Fresh Cauliflower",
-        "description": "Organic cauliflower, perfect for any meal.",
+        "description": "Organic cauliflower, perfect for any meal. This cauliflower is fresh, crisp, and packed with nutrients. It's a versatile vegetable that can be used in a variety of dishes, from soups and salads to stir-fries and casseroles. Rich in vitamins, minerals, and antioxidants, cauliflower is a healthy choice for any diet. Its mild flavor and firm texture make it a great substitute for grains and legumes in low-carb diets.",
         "category": "Vegetables",
         "price": 12.00,
         "images": [
@@ -135,9 +128,8 @@
     },
 
     {
-
         "name": "Green Capsicum",
-        "description": "Crunchy green capsicum, perfect for salads and cooking.",
+        "description": "Crunchy green capsicum, perfect for salads and cooking. These capsicums are not only deliciously crunchy but also rich in vitamins A and C. They add a vibrant color and crisp texture to your salads, stir-fries, and other dishes. Enjoy their sweet flavor and numerous health benefits, including boosting your immune system and improving skin health. Use them to add a fresh, healthy crunch to your meals.",
         "category": "Vegetables",
         "price": 9.00,
         "images": [
@@ -150,11 +142,10 @@
         "rating": 4.4,
         "availability": "Out of Stock"
     },
-
+    
     {
-
         "name": "Green Chili",
-        "description": "Spicy green chili peppers.",
+        "description": "Spicy green chili peppers. These chili peppers are perfect for adding a fiery kick to your dishes. They are fresh, vibrant, and packed with heat and flavor. Use them in curries, salsas, or as a spicy topping for your favorite foods. Green chilies are also rich in vitamins A and C, making them a healthy addition to your diet. Their intense heat and bold flavor are sure to enhance any meal.",
         "category": "Vegetables",
         "price": 34.00,
         "images": [
@@ -168,5 +159,3 @@
         "availability": "Out of Stock"
     }
 ]
-  
-  

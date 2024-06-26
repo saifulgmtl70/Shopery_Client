@@ -6,6 +6,9 @@ import { RiAdminFill } from "react-icons/ri";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import { Helmet } from 'react-helmet-async';
+
 const AllUsers = () => {
     const axiosSecure = useAxiosSecure();
 
@@ -54,6 +57,10 @@ const AllUsers = () => {
 
     return (
         <div className="px-12 my-20 py-12">
+            <Helmet>
+                <title>Shopery | ALl Users </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <ToastContainer/>
             <div className="mb-7">
                 <h2 className="text-[20px] text-[#333] font-bold">

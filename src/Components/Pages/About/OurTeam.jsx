@@ -6,7 +6,7 @@ import { FaPinterestP,FaInstagram  } from "react-icons/fa";
 import './about.css'
 const OurTeam = () => {
     return (
-        <div className="px-5 lg:px-14 py-10 my-5 bg-[#F3F3F3]">
+        <div className="px-5 lg:px-14 py-10 my-5 ">
             <div className="text-center mb-10">
                 <h2 className="text-[#222] font-bold text-[40px] mb-2">Our Awesome Team</h2>
                 <p className="text-[#444] text-[16px]">Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.</p>

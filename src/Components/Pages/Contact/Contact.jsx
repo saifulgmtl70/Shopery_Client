@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import Newsletter from "../Shop/Products/Newsletter";
 
+import { Helmet } from 'react-helmet-async';
+
 const mapContainerStyle = {
     width: '100%',
     height: '400px'
@@ -37,6 +39,10 @@ const Contact = () => {
 
     return (
         <section className="nunito_sans">
+            <Helmet>
+                <title>Shopery | Contact Us </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">
                     <ul>

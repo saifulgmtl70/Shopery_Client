@@ -7,6 +7,9 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import { Helmet } from 'react-helmet-async';
+
 const Wishlist = () => {
     const [wishlist, refetch] = useWishlist();
     const axiosPublic = useAxiosPublic();
@@ -59,6 +62,10 @@ const Wishlist = () => {
 
     return (
         <section className="nunito_sans">
+            <Helmet>
+                <title>Shopery | Wishlist </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <ToastContainer/>
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">

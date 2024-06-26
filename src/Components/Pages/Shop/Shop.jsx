@@ -5,6 +5,8 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import './shop.css';
 import Products from "./Products/Products";
 
+import { Helmet } from 'react-helmet-async';
+
 const Shop = () => {
     // Function to calculate the time left until the specified date
     const calculateTimeLeft = () => {
@@ -38,6 +40,10 @@ const Shop = () => {
 
     return (
         <section className="nunito_sans">
+             <Helmet>
+                <title>Shopery | Shop </title>
+                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
+            </Helmet>
             <div className="shop_banner h-auto mb-2">
                 <div className="text-[17px] text-white breadcrumbs mb-5">
                     <ul>
