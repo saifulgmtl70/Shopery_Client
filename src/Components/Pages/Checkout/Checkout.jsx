@@ -7,6 +7,9 @@ import useCart from "../../Hooks/useCart";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useAuth from '../../Hooks/useAuth';
 
+
+import Swal from 'sweetalert2'
+
 import { Helmet } from 'react-helmet-async';
 
 const Checkout = () => {
@@ -73,10 +76,19 @@ const Checkout = () => {
         try {
             const response = await axiosPublic.post('/orders', orderData);
             if (response.status === 201) {
-                toast.success("Order placed successfully", {
-                    position: "top-center",
-                    autoClose: 3000,
-                });
+                // toast.success("Order placed successfully", {
+                //     position: "top-center",
+                //     autoClose: 3000,
+                // });
+
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Order placed successfully",
+                    showConfirmButton: false,
+                    timer: 3500
+                  });
+
                 // Send DELETE request to remove cart items after placing the order
                 const deleteResponse = await axiosPublic.delete(`/carts?email=${user.email}`);
                 if (deleteResponse.data.deletedCount > 0) {
@@ -89,10 +101,10 @@ const Checkout = () => {
                     // });
                 }
             } else {
-                toast.error("Order placement failed", {
-                    position: "top-center",
-                    autoClose: 3000,
-                });
+                // toast.error("Order placement failed", {
+                //     position: "top-center",
+                //     autoClose: 3000,
+                // });
             }
         } catch (error) {
             console.error('Error placing order', error);
@@ -101,7 +113,17 @@ const Checkout = () => {
                 autoClose: 3000,
             });
         }
+
+
+        form.reset();
+
+
+
     };
+
+
+
+
       
     return (
         <section className="nunito_sans">

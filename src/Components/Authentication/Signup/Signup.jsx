@@ -39,12 +39,11 @@ const Signup = () => {
         e.preventDefault();
 
         const form = e.target;
-        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         const confirmpassword = form.confirmpassword.value;
 
-        const userInfo = { name, email };
+        const userInfo = { email, password };
         console.log(userInfo);
 
 

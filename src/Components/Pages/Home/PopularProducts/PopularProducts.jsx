@@ -8,7 +8,7 @@ const PopularProducts = () => {
     const [openModalId, setOpenModalId] = useState(null);
 
     useEffect(() => {
-        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/products')
+        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/products')
             .then(res => res.json())
             .then(data => setPopularProducts(data));
     }, []);

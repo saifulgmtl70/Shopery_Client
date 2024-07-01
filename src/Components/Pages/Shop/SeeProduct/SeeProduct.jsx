@@ -27,7 +27,7 @@ const SeeProduct = () => {
 
     useEffect(() => {
         // Fetch related products from the server
-        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/products')
+        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 // Filter out the current product

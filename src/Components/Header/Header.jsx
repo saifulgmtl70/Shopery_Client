@@ -15,6 +15,10 @@ import useAxiosPublic from '../Hooks/useAxiosPublic';
 import useWishlist from '../Hooks/useWishlist';
 import useAdmin from '../Hooks/useAdmin';
 
+import { MdManageAccounts } from "react-icons/md";
+
+import { IoLogOutOutline } from "react-icons/io5";
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -31,6 +35,15 @@ function Header() {
     const handleMenuItemClick = () => {
       setMenuOpen(false);
     };
+
+
+    const handleCloseCart = () =>{
+      setCartOpen(false);
+    }
+
+    const handleCloseWishList = () =>{
+      setWlishListOpen(false);
+    }
 
 
   const axiosPublic = useAxiosPublic();
@@ -131,15 +144,21 @@ function Header() {
             <CiSearch className="text-[#222] text-[20px] cursor-pointer" />
             <div className='relative'>
               <CiHeart onClick={() => setWlishListOpen(true)} className="text-[#222] text-[20px] cursor-pointer" />
+              {
+                wishlist.length === 0 ? <span ></span> : 
                 <span className="text-[#00B307] absolute font-bold -top-3 -right-1 rounded-full ">
-                    {wishlist.length}
+                  {wishlist.length}
                 </span>
+              }
             </div>
             <div className='relative'>
               <CiShoppingCart  className="text-[#222] text-[20px] cursor-pointer" onClick={() => setCartOpen(true)} />
-              <span className="text-[#00B307] absolute font-bold -top-3 -right-1 rounded-full ">
-                {cart.length}
-              </span>
+              {
+                cart.length === 0 ? <span ></span> : 
+                <span className="text-[#00B307] absolute font-bold -top-3 -right-1 rounded-full ">
+                  {cart.length}
+                </span>
+              }
             </div>
             {/* Add onClick handler */}
             {user ? (
@@ -149,11 +168,16 @@ function Header() {
                   <span className="ml-2 text-[#444]">{user.displayName}</span>
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-auto lg:w-60 bg-white border rounded shadow-lg z-50">
+                  <div className="absolute right-0 mt-2  h-auto w-auto lg:w-72 bg-white border rounded shadow-lg z-50">
                     <div className="">
-                      <div className="p-3" >
-                        <p className="font-bold text-[18px]">{user.displayName}</p>
-                        <p className="text-[15px]  text-gray-600">{user.email}</p>
+
+                      <div className="flex items-center justify-center pt-3">
+                          <img src={user.photoURL} alt="user" className="w-16 h-16 rounded-full" />
+                      </div>
+
+                      <div className="p-3 text-center" >
+                        <p className="font-bold text-[23px]">{user.displayName}</p>
+                        <p className="text-[16px]  text-gray-600">{user.email}</p>
                       </div>
                       {/* 
                        */}
@@ -163,13 +187,14 @@ function Header() {
 
                         :
 
-                        <Link to="userdashboard/userhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Your Profile</button></Link>
+                        <Link to="userdashboard/userhome" className='w-full text-[18px] bg-gray-100 px-3 py-3 flex items-center gap-[5px]'> <MdManageAccounts /> <button className=" text-left">Your Profile</button></Link>
 
                       }
 
                     </div>
-                    <div className="border-t">
-                      <button onClick={handleLogout} className="w-full text-left px-4 py-2 bg-gray-100">Logout</button>
+                    <div className="border-t w-full text-[18px] cursor-pointer bg-gray-100 px-3 py-3 flex items-center gap-[5px]">
+                      <IoLogOutOutline />
+                      <button onClick={handleLogout} className=" ">Logout</button>
                     </div>
                   </div>
                 )}
@@ -182,9 +207,12 @@ function Header() {
           <div className="md:hidden flex items-center gap-2">
             <div className=' relative'>
               <CiShoppingCart  className="text-[#222] text-[20px] cursor-pointer" onClick={() => setCartOpen(true)} />
-              <span className="text-[#00B307] absolute font-bold -top-3 -right-1 rounded-full ">
-                {cart.length}
-              </span>
+              {
+                cart.length === 0 ? <span ></span> : 
+                <span className="text-[#00B307] absolute font-bold -top-3 -right-1 rounded-full ">
+                  {cart.length}
+                </span>
+              }
             </div> {/* Add onClick handler */}
             {user ? (
               <div className="relative">
@@ -192,9 +220,12 @@ function Header() {
                   <img src={user.photoURL} alt="user" className="w-8 h-8 rounded-full" />
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-60 bg-white border rounded shadow-lg z-50">
+                      <div className="absolute right-0 mt-2 h-auto w-64 bg-white border rounded shadow-lg z-50">
+                         <div className="flex items-center  justify-center pt-3">
+                          <img src={user.photoURL} alt="user" className="w-16 h-16 rounded-full" />
+                      </div>
                     <div className="">
-                      <div className="p-3" >
+                      <div className="p-3 text-center" >
                           <p className="font-bold text-[18px]">{user.displayName}</p>
                           <p className="text-[15px]  text-gray-600">{user.email}</p>
                       </div>
@@ -203,12 +234,13 @@ function Header() {
                         
                         :
 
-                        <Link to="userdashboard/userhome" className='py-3'><button className="w-full text-left px-4 py-2 bg-gray-100">Your Profile</button></Link>
+                        <Link to="userdashboard/userhome" className='text-[17px] w-full bg-gray-100 px-3 py-3 flex items-center gap-[5px]'> <MdManageAccounts /> <button className="text-left ">Your Profile</button></Link>
 
                       }
                     </div>
-                    <div className="border-t">
-                      <button onClick={handleLogout} className="w-full text-left px-4 py-2 bg-gray-100">Logout</button>
+                    <div className="border-t w-full cursor-pointer text-[17px] bg-gray-100 px-3 py-3 flex items-center gap-[5px]">
+                      <IoLogOutOutline />
+                      <button onClick={handleLogout} className="  ">Logout</button>
                     </div>
                   </div>
                 )}
@@ -244,7 +276,15 @@ function Header() {
 
           <div className="flex justify-center space-x-4 pb-4">
             <CiSearch className="text-[#222] text-[20px] cursor-pointer" />
-            <CiHeart onClick={() => setWlishListOpen(true)} className="text-[#222] text-[20px] cursor-pointer" />
+            <div className='relative'>
+              <CiHeart onClick={() => setWlishListOpen(true)} className="text-[#222] text-[20px] cursor-pointer" />
+              {
+                wishlist.length === 0 ? <span ></span> : 
+                <span className="text-[#00B307] absolute font-bold -top-3 -right-1 rounded-full ">
+                  {wishlist.length}
+                </span>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -261,9 +301,9 @@ function Header() {
             <FaTimes />
           </button>
         </div>
-        <div className="p-4">
+        <div className="scrollable-container p-4">
           {/* Cart items will go here */}
-          <ul>
+          <ul className="mb-14">
             {
               cart.map((item) => (
                 <li key={item._id} className='border-b pb-3 flex items-center justify-between px-3 py-2'>
@@ -294,8 +334,8 @@ function Header() {
             </div>
 
             <div className="flex flex-col gap-3 justify-around">
-              <Link to="/checkout" className='px-12 py-3 text-center rounded-[24px] bg-[#00B207] text-[#fff]'><button >Checkout</button></Link>
-              <Link to="/cart" className='px-12 py-3 text-center rounded-[24px] bg-[#d2e7d2] text-[#00B207] font-bold'><button >Go to Cart</button></Link>
+              <Link onClick={handleCloseCart} to="/checkout" className='px-12 py-3 text-center rounded-[24px] bg-[#00B207] text-[#fff]'><button >Checkout</button></Link>
+              <Link onClick={handleCloseCart} to="/cart" className='px-12 py-3 text-center rounded-[24px] bg-[#d2e7d2] text-[#00B207] font-bold'><button >Go to Cart</button></Link>
             </div>
           </div>
 
@@ -316,9 +356,9 @@ function Header() {
             <FaTimes />
           </button>
         </div>
-        <div className="p-4">
+        <div className="scrollable-container p-4">
           {/* Cart items will go here */}
-          <ul>
+          <ul className="mb-14">
             {
               wishlist.map((item) => (
                 <li key={item._id} className='border-b pb-3 flex items-center justify-between px-3 py-2'>
@@ -346,9 +386,9 @@ function Header() {
 
             <div className="flex flex-col gap-3 justify-around">
               
-              <Link to="/cart" className='px-12 py-3 text-center rounded-[24px] bg-[#00B207] text-[#fff]'><button >Go to Cart</button></Link>
+              <Link onClick={handleCloseWishList} to="/cart" className='px-12 py-3 text-center rounded-[24px] bg-[#00B207] text-[#fff]'><button >Go to Cart</button></Link>
 
-              <Link to="/wishlist" className='px-12 py-3 text-center rounded-[24px] bg-[#d2e7d2] text-[#00B207] font-bold'><button >Go to Wishlist</button></Link>
+              <Link onClick={handleCloseWishList} to="/wishlist" className='px-12 py-3 text-center rounded-[24px] bg-[#d2e7d2] text-[#00B207] font-bold'><button >Go to Wishlist</button></Link>
             </div>
           </div>
 

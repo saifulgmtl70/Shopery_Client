@@ -32,17 +32,6 @@ const Cart = () => {
         }));
     };
 
-    // const handleDeleteItem = (id) => {
-    //     const newCart = cart.filter(item => item._id !== id);
-    //     toast.success(`Item is deleted Successfully`, {
-    //         position: "top-center",
-    //         autoClose: 3000,
-    //         // onClose: () =>  navigate('/userdashboard/myappointment')
-    //     });
-    //     setCart(newCart);
-    // };
-
-
 
     const handleDeleteItem = (id) =>{
         axiosPublic.delete(`/carts/${id}`)
@@ -121,7 +110,7 @@ const Cart = () => {
                                                 </td>
                                                 <td className="px-4 py-3 text-ms font-semibold ">৳{item.price}</td>
                                                 <td className="px-1 py-3 text-ms font-semibold">
-                                                    <div className="flex items-center gap-1 border w-7/12 p-2 rounded-[23px]">
+                                                    <div className="flex items-center gap-1 border w-auto lg:w-8/12 p-2 rounded-[5px]">
                                                         <button onClick={() => handleQuantityChange(item._id, -1)} type="button" className="text-gray-600 transition hover:opacity-75">
                                                             -
                                                         </button>

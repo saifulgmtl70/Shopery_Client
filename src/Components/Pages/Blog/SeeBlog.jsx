@@ -40,6 +40,8 @@ const SeeBlog = () => {
         );
     }
 
+    
+
     return (
         <section className="nunito_sans">
             <Helmet>
@@ -72,7 +74,7 @@ const SeeBlog = () => {
                         <div className="flex items-center justify-between px-5 border-b pb-5">
                             <div className="flex items-start gap-3">
                                 <div>
-                                    <img src="https://i.ibb.co/Qcw07QM/author.png" alt="" />
+                                    <img src="https://i.ibb.co/LdpRsQt/78ea8cd5-ab52-4533-b8d7-79347471fbea.png" className="w-[60px] h-[60px] rounded-full" alt="" />
                                 </div>
                                 <div>
                                     <h4 className="text-[#222] font-[600] text-[17px] mb-[3px]">{blog.author}</h4>

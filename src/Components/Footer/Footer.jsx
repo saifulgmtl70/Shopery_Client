@@ -7,6 +7,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaTwitter, FaPinterestP, FaInstagram, FaApple, FaGooglePlay, FaAmazonPay     } from "react-icons/fa";
 import { RiVisaLine } from 'react-icons/ri';
 import { SiMastercard } from "react-icons/si";
+import TopButton from './TopButon';
 
 const Footer = () => {
     return (
@@ -184,6 +185,8 @@ const Footer = () => {
 
     
   </div>
+
+  <TopButton/>
 </footer>
     );
 };

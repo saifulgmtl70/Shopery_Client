@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useAuth from '../../../Hooks/useAuth';
 
 const Comments = ({ blogId }) => {
     const [commentText, setCommentText] = useState('');
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
     const [comments, setComments] = useState([]);
+
+    const {user} = useAuth();
+
+    const email = user.email
 
     const fetchComments = async () => {
         try {
-            const response = await fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs/${blogId}/comments`);
+            const response = await fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs/${blogId}/comments`);
             if (response.ok) {
                 const data = await response.json();
                 setComments(data);
@@ -28,7 +32,7 @@ const Comments = ({ blogId }) => {
         e.preventDefault();
     
         try {
-            const response = await fetch(`https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs/${blogId}/comments`, {
+            const response = await fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs/${blogId}/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +45,7 @@ const Comments = ({ blogId }) => {
                 setComments([...comments, newComment]);
                 setCommentText('');
                 setName('');
-                setEmail('');
+                email;
                 toast.success(`Posted your Comment Successfully`, {
                     position: "top-center",
                     autoClose: 3000,
@@ -86,8 +90,8 @@ const Comments = ({ blogId }) => {
                             type="email"
                             placeholder='example@gmail.com'
                             className="w-full border focus:outline-none focus:border-[#479551d5] px-4 py-3 rounded-[6px]"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            value={user.email}
+                            
                             required
                         />
                     </div>
@@ -117,7 +121,7 @@ const Comments = ({ blogId }) => {
                 {comments.map((comment, index) => (
                     <li key={index} className='flex items-start gap-2 border-b pb-4 mb-7'>
                         <div>
-                            <img src="https://i.ibb.co/8KDqysT/Ellipse-8.png" alt="" />
+                            <img src={user.photoURL} className="w-[60px] h-[60px] rounded-full" alt="" />
                         </div>
                         <div>
                             <h4 className='text-[#222] flex items-center text-[17px] mb-1'>{comment.name} 

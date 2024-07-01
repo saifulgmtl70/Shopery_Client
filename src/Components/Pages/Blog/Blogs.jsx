@@ -8,19 +8,44 @@ import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
+    const [filter, setFilter] = useState({ category: '', search: '' });
+    const [sort, setSort] = useState('');
 
     useEffect(() => {
-        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs')
+        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(error => console.error('Error fetching blogs:', error));
     }, []);
 
+    const handleFilterChange = (e) => {
+        setFilter({ ...filter, [e.target.name]: e.target.value });
+    };
+
+    const handleSortChange = (e) => {
+        setSort(e.target.value);
+    };
+
+    const filteredBlogs = blogs.filter(blog => {
+        return (
+            (filter.category ? blog.category === filter.category : true) &&
+            (filter.search ? blog.title.toLowerCase().includes(filter.search.toLowerCase()) : true)
+        );
+    });
+
+    const sortedBlogs = filteredBlogs.sort((a, b) => {
+        if (sort === 'newest') {
+            return new Date(b.date) - new Date(a.date);
+        } else if (sort === 'oldest') {
+            return new Date(a.date) - new Date(b.date);
+        }
+        return 0;
+    });
+
     return (
         <section className="nunito_sans">
             <Helmet>
                 <title>Shopery | Blog </title>
-                {/* <link rel="canonical" href="https://www.tacobell.com/" /> */}
             </Helmet>
             <div className="specific_product_banner h-full lg:h-[30vh] mb-2">
                 <div className="text-[17px] text-white breadcrumbs px-12 py-10 mb-5">
@@ -32,27 +57,43 @@ const Blogs = () => {
             </div>
 
             <div className="px-7 lg:px-14 py-10">
-                <div className="flex items-center justify-center lg:justify-between gap-4 mb-7">
-                    <div className="flex gap-4">
-                        <select className="select focus:outline-0">
-                            <option value="">Sort By Category</option>
-                            <option value="electronics">Fish & Meat</option>
-                            <option value="fashion">Fruits & Vegetables</option>
-                            <option value="home">Grocery</option>
+                {/* Filter Section */}
+
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 mb-10">
+                    <div className="">
+                        <input
+                            type="text"
+                            name="search"
+                            placeholder="Search by title"
+                            value={filter.search}
+                            onChange={handleFilterChange}
+                            className="p-2 border focus:outline-none w-full rounded"
+                        />
+                    </div>
+                    <div className="">
+                        <select name="category" value={filter.category} onChange={handleFilterChange} className="p-2 border focus:outline-none w-full rounded">
+                            <option value="">All Categories</option>
+                            <option value="Health">Health</option>
+                            <option value="Cooking">Cooking</option>
+                            <option value="Gardening">Gardening</option>
+                            <option value="Sustainability">Sustainability</option>
+                            <option value="Tips">Tips</option>
+                            <option value="Recipes">Recipes</option>
                         </select>
                     </div>
-                    <div className="flex gap-4">
-                        <select className="select focus:outline-0">
-                            <option value="">Sort By Date</option>
-                            <option value="latest">Sort by: Latest</option>
-                            <option value="popular">Sort by: Popular</option>
-                            <option value="rating">Sort by: Rating</option>
+                    <div className="">
+                        <select name="sort" value={sort} onChange={handleSortChange} className="p-2 border focus:outline-none w-full rounded">
+                            <option value="">Sort by Date</option>
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
                         </select>
                     </div>
                 </div>
 
+
+                {/* Blogs Section */}
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-                    {blogs.map((blog) => (
+                    {sortedBlogs.map((blog) => (
                         blog && <Blog key={blog._id} blog={blog} />
                     ))}
                 </div>

@@ -11,7 +11,7 @@ const News = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('https://shopery-server-m9vzxd92o-saiful-islam-azads-projects.vercel.app/blogs')
+        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(error => console.error('Error fetching blogs:', error));

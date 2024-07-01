@@ -14,6 +14,17 @@ import { Helmet } from 'react-helmet-async';
 const Userhome = () => {
     const { user } = useAuth();
 
+
+    const { data: billings = [] } = useQuery({
+        queryKey: ['billings', user?.email],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/billings?email=${user.email}`);
+            return res.data;
+        }
+    });
+
+
+
     if (!user) {
         return <div>Loading...</div>; // or any loading indicator you prefer
     }
@@ -71,19 +82,33 @@ const Userhome = () => {
                         <p className="text-[#666] font-[500] text-[15px] mb">Customer</p>
                     </div>
                     <div className="text-center">
-                        <Link> <button className="text-[#00B307] text-[19px] font-bold text-center">Edit Profile</button> </Link>
+                        <Link to="/userdashboard/settings"> <button className="text-[#00B307] text-[19px] font-bold text-center">Edit Profile</button> </Link>
                     </div>
                 </div>
-                <div className="h-auto rounded-lg border p-5">
-                    <span className="text-[#666] font-[600] text-[14px]">BILLING ADDRESS</span>
-                    <h3 className="text-[#333] font-[600] text-[20px] mb-2 mt-4">Saiful Islam Azad</h3>
-                    <p className="text-[#666] font-[500] text-[15px] mb-3">4140 Parker Rd. Allentown, New Mexico 31134</p>
-                    <p className="text-[#333] font-[500] text-[15px] mb-2">dainne.ressell@gmail.com</p>
-                    <p className="text-[#333] font-[500] text-[15px] mb-4">(671) 555-0110</p>
 
-                    <Link> <button className="text-[#00B307] text-[19px] font-bold mt-4">Edit Address</button> </Link>
+               
 
-                </div>
+
+                {
+                    billings.map((billing) => {
+                        return (
+                        <div  key={billing._id} className="h-auto rounded-lg border p-5">
+                            <span className="text-[#666] font-[600] text-[14px]">BILLING ADDRESS</span>
+                            <h3 className="text-[#333] font-[600] text-[20px] mb-2 mt-4">{billing.fullname}</h3>
+                            <p className="text-[#666] font-[500] text-[15px] mb-3">{billing.streetaddress}</p>
+                            <p className="text-[#333] font-[500] text-[15px] mb-2">{billing.email}</p>
+                            <p className="text-[#333] font-[500] text-[15px] mb-4">{billing.phone}</p>
+        
+                            <Link to="/userdashboard/settings"> <button className="text-[#00B307] text-[19px] font-bold mt-4">Edit Address</button> </Link>
+        
+                        </div>
+                        );
+                    })
+                }
+
+
+
+                
             </div>
 
 
