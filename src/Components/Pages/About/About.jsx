@@ -34,12 +34,19 @@ const About = () => {
 
             <div className="px-7 lg:px-14 py-10 mb-5">
                 <div className="flex flex-col lg:flex-row items-center justify-around gap-5 ">
-                    <div className="h-auto w-full lg:w-6/12 ">
+                    <div className="h-auto w-full lg:w-6/12 "
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
                         <h2 className="text-[#111] font-bold text-[40px] lg:text-[60px]">100% Trusted Organic Food Store</h2>
                         <p className="text-[#444] font-[600] leading-normal tracking-wide">Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros. Cras quis ultricies elit. Proin ac lectus arcu. Maecenas aliquet vel tellus at accumsan. Donec a eros non massa vulputate ornare. Vivamus ornare commodo ante, at commodo felis congue vitae.
                         </p>
                     </div>
-                    <div className="h-auto w-full lg:w-6/12">
+                    <div className="h-auto w-full lg:w-6/12"
+                    data-aos="fade-left"
+                    data-aos-anchor="#example-anchor"
+                    data-aos-offset="500"
+                    data-aos-duration="500">
                         <img src="https://i.ibb.co/NNYjsj0/about.png" alt="" />
                     </div>
                 </div>

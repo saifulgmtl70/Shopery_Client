@@ -29,7 +29,11 @@ const HotDeal = () => {
 
             <div className="hot-deals-container grid grid-cols-1 lg:grid-cols-4 gap-[20px]">
                 {hotDeals.map((deal) => (
-                    <div className="hot-deal-card" key={deal.id}>
+                    <div className="hot-deal-card" key={deal.id}
+                    data-aos="zoom-in"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out">
                         {deal.sale && <div className="hot-deal-sale">{deal.sale}</div>}
                         <img src={deal.image} alt={deal.name} />
                         <div className="hot-deal-info flex items-center justify-between">

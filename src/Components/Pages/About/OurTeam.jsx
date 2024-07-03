@@ -16,7 +16,11 @@ const OurTeam = () => {
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
                 
 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/gvgcLWP/team-1.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -42,7 +46,11 @@ const OurTeam = () => {
                     </div>
                 </div>
 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/dfsk5Hc/team-2.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -69,7 +77,11 @@ const OurTeam = () => {
                 </div>
 
                 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/2MF87xK/team-3.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -96,7 +108,11 @@ const OurTeam = () => {
                 </div>
 
                 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/FWDFmft/Image-4.png" alt="Avatar" className="image" />
                         <div className="overlay">

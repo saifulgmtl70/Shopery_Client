@@ -84,3 +84,36 @@
 .custom-swiper-button-next {
     right: 10px;
 }
+
+/* Slider animation */
+/* @keyframes fadeIn {
+    0% {
+        transform: translateY(-1rem) scale(0);
+        opacity: 0;
+    }
+} */
+
+.swiper-slide .content {
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+.swiper-slide .content img, span, h1, p, button {
+    animation: fadeIn 0.4s cubic-bezier(.54,1.3,.63,1.34) .4s backwards;
+}
+
+.swiper-slide-active .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .swiper-slide-active .content {
+        flex-direction: row;
+        text-align: left;
+    }
+}

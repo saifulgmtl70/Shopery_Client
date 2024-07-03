@@ -32,13 +32,17 @@ const News = () => {
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
                     {blogs.slice(0, 3).map((blog) => (
-                        blog && <article key={blog._id}  className="h-auto relative rounded-sm bg-[#fff] shadow-md hover:shadow-xl border hover:border-0 overflow-hidden transition cursor-pointer w-full">
-                        <div className="hover:relative overflow-hidden duration-1000">
-                            <img alt="" src={blog.main_image} className="overflow-hidden w-full hover:scale-105 duration-1000 ease-in-out object-cover" />
-                            <div className='bg-[#fff] px-8 py-2 rounded-[5px] absolute left-2 top-3'>
-                                <h4>{blog.date}</h4>
-                            </div>
-                        </div>
+                        blog && <article key={blog._id}  className="h-auto relative rounded-sm bg-[#fff] shadow-md hover:shadow-xl border hover:border-0 overflow-hidden transition cursor-pointer w-full"
+                        data-aos="zoom-in"
+                        data-aos-delay="50"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out">
+                                    <div className="hover:relative overflow-hidden duration-1000">
+                                        <img alt="" src={blog.main_image} className="overflow-hidden w-full hover:scale-105 duration-1000 ease-in-out object-cover" />
+                                        <div className='bg-[#fff] px-8 py-2 rounded-[5px] absolute left-2 top-3'>
+                                            <h4>{blog.date}</h4>
+                                        </div>
+                                    </div>
             
                         <div className="p-4 sm:p-6">
                             <div className="flex items-center gap-3">

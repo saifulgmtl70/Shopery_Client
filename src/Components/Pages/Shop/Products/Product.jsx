@@ -115,7 +115,11 @@ const Product = ({product, isModalOpen, openModal, closeModal}) => {
 
 
     return (
-        <div className="h-auto p-4 border rounded-[3px] product_Card relative">
+        <div className="h-auto p-4 border rounded-[3px] product_Card relative"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
             <ToastContainer/>
             <div>
                 <img src={images[0]} alt={name} className="w-auto lg:w-[260px] h-auto lg:h-[160px] mx-auto" />

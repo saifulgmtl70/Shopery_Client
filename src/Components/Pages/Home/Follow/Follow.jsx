@@ -11,7 +11,11 @@ const Follow = () => {
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-8">
                 
 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/80P8Mcp/01.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -27,7 +31,11 @@ const Follow = () => {
                     
                 </div>
 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/KbJ05Jy/02.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -43,7 +51,11 @@ const Follow = () => {
                 </div>
 
                 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/pPcwFZ8/03.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -59,7 +71,11 @@ const Follow = () => {
                 </div>
 
                 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/4JH2jwm/04.png" alt="Avatar" className="image" />
                         <div className="overlay">
@@ -76,7 +92,11 @@ const Follow = () => {
                 
 
                 
-                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] ">
+                <div className="h-auto w-auto border hover:shadow-lg rounded-[4px] "
+                 data-aos="zoom-in"
+                 data-aos-delay="50"
+                 data-aos-duration="1000"
+                 data-aos-easing="ease-in-out">
                     <div className="container">
                         <img src="https://i.ibb.co/1nQssFH/05.png" alt="Avatar" className="image" />
                         <div className="overlay">

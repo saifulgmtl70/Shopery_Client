@@ -11,7 +11,11 @@ const Blog = ({ blog }) => {
     const {_id, title, main_image, date, author, category, comments } = blog;
 
     return (
-        <article className="h-auto relative rounded-sm bg-[#fff] shadow-md hover:shadow-xl hover:border-0 overflow-hidden transition cursor-pointer w-full">
+        <article className="h-auto relative rounded-sm bg-[#fff] shadow-md hover:shadow-xl hover:border-0 overflow-hidden transition cursor-pointer w-full"
+        data-aos="zoom-in"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out">
             <div className="hover:relative overflow-hidden duration-1000">
                 <img alt="" src={main_image} className="overflow-hidden w-full hover:scale-105 duration-1000 ease-in-out object-cover" />
                 <div className='bg-[#fff] px-8 py-2 rounded-[5px] absolute left-2 top-3'>

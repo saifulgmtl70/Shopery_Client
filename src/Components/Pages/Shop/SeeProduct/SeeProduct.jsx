@@ -319,7 +319,11 @@ const SeeProduct = () => {
 
                 {/* Tab Contents */}
                 {activeTab === "Descriptions" && (
-                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 mt-16">
+                    <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-12 mt-16"
+                    data-aos="zoom-in"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out">
                         <div className="h-auto ">
                             <p className="text-[16px] text-[#878686] leading-6  mb-[10px]">Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.</p>
 
@@ -371,7 +375,11 @@ const SeeProduct = () => {
                 )}
 
                 {activeTab === "Additional_Information" && (
-                    <div className="mt-16">
+                    <div className="mt-16"
+                    data-aos="zoom-in"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out">
                         <h2 className="text-[24px] font-bold mb-4">Additional Information</h2>
                         <ul className="list-disc pl-5 space-y-2 text-[16px] text-[#878686] leading-6">
                             <li><strong>Weight:</strong> 1 kg</li>
@@ -393,7 +401,11 @@ const SeeProduct = () => {
 
 
                 {activeTab === "Customer_Feedback" && (
-                    <div className="mt-16 w-full lg:w-7/12">
+                    <div className="mt-16 w-full lg:w-7/12"
+                    data-aos="zoom-in"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out">
                         <CustomerReview reviewId={productId} productName={product.name} />
                     </div>
                 )}
@@ -416,7 +428,11 @@ const SeeProduct = () => {
                 <h2 className="text-2xl font-semibold mb-4">Related Products</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {relatedProducts.slice(0, 4).map((relatedProduct) => (
-                        <div key={relatedProduct._id} className="h-auto p-4 border rounded-[3px] product_Card relative">
+                        <div key={relatedProduct._id} className="h-auto p-4 border rounded-[3px] product_Card relative"
+                        data-aos="zoom-in"
+                        data-aos-delay="50"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-out">
                             <div>
                                 <img src={relatedProduct.images[0]} alt={relatedProduct.name} className="w-auto lg:w-[260px] h-auto lg:h-[160px]  mx-auto" />
                             </div>
