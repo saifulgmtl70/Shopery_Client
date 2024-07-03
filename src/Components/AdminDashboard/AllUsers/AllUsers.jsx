@@ -86,7 +86,7 @@ const AllUsers = () => {
                                     <td className="px-4 py-3 text-ms font-semibold">{user._id}</td>
                                     <td className="px-4 py-3 text-ms font-semibold">
                                         <h2 className="text-[#333] px-4 py-2 text-[16px] font-[700]">
-                                            {user.name}
+                                            {user.displayName || user.name}
                                         </h2>
                                     </td>
                                     <td className="px-4 py-3 text-ms font-semibold">{user.email}</td>

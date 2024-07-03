@@ -10,11 +10,14 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import Coments from "./Coments/Coments";
 import Newsletter from "../Shop/Products/Newsletter";
 
+
+
 import { Helmet } from 'react-helmet-async';
 
 const SeeBlog = () => {
     const { id } = useParams();  // Use useParams to get the blogId from the URL
     const blogs = useLoaderData();  // Get the list of blogs from the loader
+
 
     const blog = Array.isArray(blogs)
         ? blogs.find((blog) => blog._id === id)

@@ -99,7 +99,7 @@ const Userhome = () => {
                             <p className="text-[#333] font-[500] text-[15px] mb-2">{billing.email}</p>
                             <p className="text-[#333] font-[500] text-[15px] mb-4">{billing.phone}</p>
         
-                            <Link to="/userdashboard/settings"> <button className="text-[#00B307] text-[19px] font-bold mt-4">Edit Address</button> </Link>
+                            <Link > <button className="text-[#00B307] text-[19px] font-bold mt-4">Edit Address</button> </Link>
         
                         </div>
                         );

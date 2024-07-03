@@ -136,39 +136,7 @@ const Description = () => {
 
             {activeTab === "Customer_Feedback" && (
                 <div className="mt-16">
-                    <h2 className="text-[24px] font-bold mb-4">Customer Feedback</h2>
-                    <div className="space-y-8">
-                        <div className="border-b pb-4 flex gap-4">
-                            <img src="https://i.ibb.co/0s3pdnc/avatar1.png" alt="John Doe" className="w-12 h-12 rounded-full" />
-                            <div>
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="font-bold">John Doe</span>
-                                    <span className="text-[#00B207]">★★★★★</span>
-                                </div>
-                                <p className="text-[16px] text-[#878686] leading-6">These potatoes are amazing! They are very fresh and taste great. Will definitely buy again.</p>
-                            </div>
-                        </div>
-                        <div className="border-b pb-4 flex gap-4">
-                            <img src="https://i.ibb.co/R6RwNxx/avatar2.png" alt="Jane Smith" className="w-12 h-12 rounded-full" />
-                            <div>
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="font-bold">Jane Smith</span>
-                                    <span className="text-[#00B207]">★★★★☆</span>
-                                </div>
-                                <p className="text-[16px] text-[#878686] leading-6">Good quality potatoes but a bit pricey. However, the quality makes up for it.</p>
-                            </div>
-                        </div>
-                        <div className="border-b pb-4 flex gap-4">
-                            <img src="https://i.ibb.co/L56GJWV/5a529678f3c82f5c65e62b93e1753cea.png" alt="Alice Johnson" className="w-12 h-12 rounded-full" />
-                            <div>
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="font-bold">Alice Johnson</span>
-                                    <span className="text-[#00B207]">★★★★★</span>
-                                </div>
-                                <p className="text-[16px] text-[#878686] leading-6">Best potatoes I've ever had. Perfect for making mashed potatoes.</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             )}
 

@@ -13,7 +13,7 @@ const Products = () => {
     const [rating, setRating] = useState(0);
 
     useEffect(() => {
-        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/products')
+        fetch('https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/products')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

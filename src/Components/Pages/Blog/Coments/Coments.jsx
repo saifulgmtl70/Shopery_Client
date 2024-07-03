@@ -5,16 +5,17 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Comments = ({ blogId }) => {
     const [commentText, setCommentText] = useState('');
-    const [name, setName] = useState('');
     const [comments, setComments] = useState([]);
 
     const {user} = useAuth();
 
-    const email = user.email
+    const email = user.email;
+    const photo = user.photoURL;
+    const name = user.displayName
 
     const fetchComments = async () => {
         try {
-            const response = await fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs/${blogId}/comments`);
+            const response = await fetch(`https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/blogs/${blogId}/comments`);
             if (response.ok) {
                 const data = await response.json();
                 setComments(data);
@@ -32,21 +33,22 @@ const Comments = ({ blogId }) => {
         e.preventDefault();
     
         try {
-            const response = await fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs/${blogId}/comments`, {
+            const response = await fetch(`https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/blogs/${blogId}/comments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ commentText, name, email }),
+                body: JSON.stringify({ commentText, name, email, photo }),
             });
     
             if (response.ok) {
                 const newComment = await response.json();
                 setComments([...comments, newComment]);
                 setCommentText('');
-                setName('');
+                name;
                 email;
-                toast.success(`Posted your Comment Successfully`, {
+                photo;
+                toast.success(`Posted your Comment`, {
                     position: "top-center",
                     autoClose: 3000,
                 });
@@ -78,7 +80,7 @@ const Comments = ({ blogId }) => {
                             type="text"
                             placeholder='example'
                             className="w-full border focus:outline-none focus:border-[#479551d5] px-4 py-3 rounded-[6px]"
-                            value={name}
+                            defaultValue={user.displayName}
                             onChange={(e) => setName(e.target.value)}
                             required
                         />
@@ -90,7 +92,7 @@ const Comments = ({ blogId }) => {
                             type="email"
                             placeholder='example@gmail.com'
                             className="w-full border focus:outline-none focus:border-[#479551d5] px-4 py-3 rounded-[6px]"
-                            value={user.email}
+                            defaultValue={user.email}
                             
                             required
                         />
@@ -121,7 +123,7 @@ const Comments = ({ blogId }) => {
                 {comments.map((comment, index) => (
                     <li key={index} className='flex items-start gap-2 border-b pb-4 mb-7'>
                         <div>
-                            <img src={user.photoURL} className="w-[60px] h-[60px] rounded-full" alt="" />
+                            <img src={comment.photo} className="w-[60px] h-[60px] rounded-full" alt="" />
                         </div>
                         <div>
                             <h4 className='text-[#222] flex items-center text-[17px] mb-1'>{comment.name} 

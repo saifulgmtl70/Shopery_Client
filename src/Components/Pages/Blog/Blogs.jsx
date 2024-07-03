@@ -12,7 +12,7 @@ const Blogs = () => {
     const [sort, setSort] = useState('');
 
     useEffect(() => {
-        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs')
+        fetch('https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(error => console.error('Error fetching blogs:', error));

@@ -37,6 +37,7 @@ import UpdateProdut from "../AdminDashboard/ManageProduct/UpdateProdut";
 
 
 
+
 export const router = createBrowserRouter([
     {
       path: "/",
@@ -56,13 +57,13 @@ export const router = createBrowserRouter([
         {
           path: '/product/:id',
           element: <SeeProduct/>,
-          loader: () => fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/products`)
+          loader: () => fetch(`https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/products`)
         },
 
         {
           path:'/seeblog/:id',
           element: <SeeBlog></SeeBlog>,
-          loader: () => fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/blogs`) 
+          loader: () => fetch(`https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/blogs`) 
 
         },
 
@@ -127,6 +128,7 @@ export const router = createBrowserRouter([
           path:'userhome',
           element: <Userhome/>
         },
+
         {
           path:"orderhistory",
           element: <OrderHistory/>
@@ -165,7 +167,7 @@ export const router = createBrowserRouter([
         {
           path: 'updateProduct/:id',
           element: <AdminRoute> <UpdateProdut/> </AdminRoute>,
-          loader: () => fetch(`https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/products`) 
+          loader: () => fetch(`https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/products`) 
         },
 
         {

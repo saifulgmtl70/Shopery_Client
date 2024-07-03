@@ -11,7 +11,7 @@ const HotDeal = () => {
     const [hotDeals, setHotDeals] = useState([]);
 
     useEffect(() => {
-        fetch('https://shopery-server-bom4620sr-saiful-islams-projects-d8d1dad5.vercel.app/hotdeals')
+        fetch('https://shopery-server-od7wm88cv-saiful-islam-azads-projects.vercel.app/hotdeals')
             .then(res => res.json())
             .then(data => setHotDeals(data));
     }, []);
